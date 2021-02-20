@@ -7,7 +7,7 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 
 export async function getStaticPaths() {
-  const posts = await getFiles('blog')
+  const posts = await getFiles('repository')
 
   return {
     paths: posts.map((p) => ({
@@ -20,11 +20,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('blog')
+  const allPosts = await getAllFilesFrontMatter('repository')
   const postIndex = allPosts.findIndex((post) => post.slug === params.slug)
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug('blog', params.slug)
+  const post = await getFileBySlug('repository', params.slug)
 
   // rss
   const rss = generateRss(allPosts)
@@ -33,7 +33,7 @@ export async function getStaticProps({ params }) {
   return { props: { post, prev, next } }
 }
 
-export default function Blog({ post, prev, next }) {
+export default function Repository({ post, prev, next }) {
   const { mdxSource, frontMatter } = post
   const content = hydrate(mdxSource, {
     components: MDXComponents,

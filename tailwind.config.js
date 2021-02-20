@@ -21,10 +21,11 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        blue: colors.lightBlue,
+        orange: colors.orange,
+        blue: colors.blue,
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -39,11 +40,11 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.orange.500'),
               '&:hover': {
-                color: theme('colors.blue.600'),
+                color: theme('colors.orange.600'),
               },
-              code: { color: theme('colors.blue.400') },
+              code: { color: theme('colors.orange.400') },
             },
             h1: {
               fontWeight: '700',
@@ -96,11 +97,11 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.orange.500'),
               '&:hover': {
-                color: theme('colors.blue.400'),
+                color: theme('colors.orange.400'),
               },
-              code: { color: theme('colors.blue.400') },
+              code: { color: theme('colors.orange.400') },
             },
             h1: {
               fontWeight: '700',
